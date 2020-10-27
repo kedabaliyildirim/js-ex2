@@ -1,6 +1,8 @@
 const dropArea =document.getElementById('imageArea');
 const preview = document.getElementById('preview');
 const stopDef = document.getElementById('stopDef');
+const message = document.getElementById('msg')
+
 
 function stopDefault(event) {
     event.preventDefault();
@@ -17,13 +19,18 @@ dropArea.addEventListener('drop', stopDefault, false);
 
 
 function onDrop(event) {
-    const data = event.dataTransfer,
-        files = data.files;
- 
+    const data = event.dataTransfer
+    files = data.files;
     fileHandler(files)      
 }
 dropArea.addEventListener('drop', onDrop, false);
+message.addEventListener('drop', messageBlock, false)
 
+function messageBlock(event) {
+    const data = event.dataTransfer
+    console.log(data);
+
+}
 
 function fileHandler(files) {
     for (let i =0, len=files.length; i<len;i++) {
@@ -45,6 +52,10 @@ function imgPreview(data) {
     
     const read = new FileReader();
     read.onload= function(event) {
+        // if (img.height > img.width) {
+        //     img.height ='100%';
+        //     img.width  ='auto';
+        // }
         img.src = event.target.result;
     }
     read.readAsDataURL(data)

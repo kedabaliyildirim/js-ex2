@@ -7,11 +7,11 @@
 #imageArea {
   margin: auto;
 	background-color: gray;
-	border-radius:20px;
-	box-shadow:0 0 35px rgba(0,0,0,0.05);
-  width: 350;
-  height: 350;
-	padding:60px 40px;
+	border-radius:20pt;
+	box-shadow:0 0 35pt rgba(0,0,0,0.05);
+  width: 350pt;
+  height: 200pt;
+	padding:60pt 40pt;
 	text-align: center;
 	cursor:pointer;
 	transition:.3s;
@@ -19,25 +19,30 @@
 .message{
   font-size: 25;
   font-style: italic;
+  margin-left: auto;
+  margin-right: auto;
   
 }
 #imageArea:hover {
-	box-shadow:0 0 45px rgba(123,5,3,2.1);
+	box-shadow:0 0 45pt rgba(123,5,3,2.1);
 }
 
 #preview {
-	margin-top:20px;
+	margin-top:20pt;
 }
 #preview .image-view {
   display: inline-block;
 	position:relative;
-	margin-right: 13px;
-	margin-bottom: 13px;
+	margin-right: auto;
+	margin-bottom: auto;
 }
 #preview .image-view img {
-    max-width: 340px;
-    max-height: 340px;
-    image-resolution: inherit;
+  width: auto;
+  height: auto;
+  max-width: 350pt;
+  max-height: 200pt;
+  margin-left: auto;
+  margin-right: auto;
 }
 #preview .overlay {
     position: absolute;
